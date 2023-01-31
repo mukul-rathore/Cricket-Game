@@ -1,0 +1,7 @@
+{
+  "India" : ["Rohit Sharma", "Shubhman Gill", "Virat Kolhi", "Surya Kumar Yadav", "Hardik Pandya", "Ravindra Jadeja", "Yuzvendra Chahal", "Ravichandran Ashwin", "Umran Malik", "Mhmd. Shami", "Mhmd. Siraj"],
+  "Pakistan" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"],
+  "Australia" : ["David Warner", "Marnus Labuschagne", "Steve Smith", "Travis Head", "Alex Carey", "Cameron Green", "Nathon Lyon", "Mitchell Starc", "Josh Hazlewood", "Pat Cummins", "Mitchell Swepson"],
+  "England" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"],
+  "test" : "Testing"
+}
