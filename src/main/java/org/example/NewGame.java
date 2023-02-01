@@ -27,9 +27,9 @@ public class NewGame {
         int t2 = sc.nextInt();
         Team team_2 = new Team(t2);
 
-        System.out.println("-----------------------  First Innings -------------------");
+        System.out.println("--------------------------------------  First Innings -----------------------------------");
         team1.startGame(team_1);
-        System.out.println("-----------------------  Second Innings -------------------");
+        System.out.println("--------------------------------------  Second Innings ----------------------------------");
         team2.startGame(team_2);
     }
 

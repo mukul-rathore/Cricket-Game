@@ -31,23 +31,22 @@ public class Team {
 
 
         JSONArray ja = (JSONArray) jo.get(getTeamName(t));
-        String temp = (String) jo.get("test");
 
         List<Player> currTeam = new ArrayList<>();
         for(int i=0; i< ja.size(); i++) {
             String tempPlayer = (String) ja.get(i);
-            Player p = new Player(tempPlayer);
+            Player p = new Player(tempPlayer, (i <= 6)? 0 : 1);
 
             currTeam.add(p);
 
             System.out.println("Player " + i + "  : " + tempPlayer);
+            System.out.println("            Role : " + ((p.role == 0)? "Batsman " : "Bowler"));
         }
 
 //        for(Player p : currTeam) {
 //            p.printDetails();
 //        }
 
-        System.out.println(temp);
         return currTeam;
     }
 

@@ -22,10 +22,10 @@ public class Main {
         }
 
         int overs;
-        System.out.println("Enter the number of overs b/w 0 to 5:");
+        System.out.println("Enter the number of overs b/w 0 to 20:");
         overs = sc.nextInt();
-        if(overs < 0 || overs > 5) {
-            System.out.println("Please enter the number of overs b/w 0 to 5");
+        if(overs < 0 || overs > 20) {
+            System.out.println("Please enter the number of overs b/w 0 to 20");
             System.out.println("Exited the Game successfully!");
             return;
         }
