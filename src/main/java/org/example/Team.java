@@ -35,7 +35,7 @@ public class Team {
         List<Player> currTeam = new ArrayList<>();
         for(int i=0; i< ja.size(); i++) {
             String tempPlayer = (String) ja.get(i);
-            Player p = new Player(tempPlayer, (i <= 6)? 0 : 1);
+            Player p = new Player(i, tempPlayer, (i <= 6)? 0 : 1);
 
             currTeam.add(p);
 

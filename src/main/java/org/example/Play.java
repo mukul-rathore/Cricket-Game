@@ -1,10 +1,24 @@
 package org.example;
+import org.example.config.Config;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 
 public class Play {
     private int overs;
     private int wickets;
     private int score;
+
+    public int getOvers() {
+        return overs;
+    }
+
+    public int getWickets() {
+        return wickets;
+    }
+
     List<Player> players;
     Play(int overs) {
         score = 0;
@@ -18,7 +32,7 @@ public class Play {
         players = li;
     }
 
-    public void startGame(Team t) {
+    public void startGame(Team t, int prevTeamScore) {
         int numberOfBalls = overs*6;
         int scoreByCurrentPlayer = 0;
         while(wickets != 10 && numberOfBalls != 0) {
@@ -26,12 +40,13 @@ public class Play {
             int run = generateRunsByRole(roleOfCurrentPlayer);
 
             scoreByCurrentPlayer = getScoreByCurrentPlayer(t, scoreByCurrentPlayer, run);
+            if(score > prevTeamScore) break;
 
             numberOfBalls--;
         }
 
         if(wickets != 10 ) {
-            t.team.set(wickets, new Player(t.team.get(wickets).name, scoreByCurrentPlayer, t.team.get(wickets).role));
+            t.team.set(wickets, new Player(t.team.get(wickets).id, t.team.get(wickets).name, scoreByCurrentPlayer, t.team.get(wickets).role));
         }
 
         System.out.println("Runs by Each Player of the Team : ");
@@ -39,6 +54,7 @@ public class Play {
             System.out.println(curr.name + " scored  " + curr.runs);
         }
         System.out.println("Total Score : " + score + "    Wickets : " + wickets + "    BallsPlayed : " + (overs*6 - numberOfBalls));
+        this.overs = overs*6 - numberOfBalls;
     }
 
     private int getScoreByCurrentPlayer(Team t, int scoreByCurrentPlayer, int run) {
@@ -68,7 +84,8 @@ public class Play {
                 score += 6;
             }
             case 7 -> {
-                t.team.set(wickets, new Player(t.team.get(wickets).name, scoreByCurrentPlayer, t.team.get(wickets).role));
+
+                t.team.set(wickets, new Player(t.team.get(wickets).id,t.team.get(wickets).name, scoreByCurrentPlayer, t.team.get(wickets).role));
                 scoreByCurrentPlayer = 0;
                 wickets += 1;
             }

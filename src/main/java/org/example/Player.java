@@ -1,6 +1,7 @@
 package org.example;
 
 public class Player {
+    int id;
      String name;
      int wickets;
      int runs;
@@ -11,13 +12,15 @@ public class Player {
         runs = 0;
         wickets = 0;
     }
-    Player(String n, int role) {
+    Player(int id, String n, int role) {
+        this.id = id;
         name = n;
         runs = 0;
         wickets = 0;
         this.role = role;
     }
-    Player(String s, int r, int role) {
+    Player(int id, String s, int r, int role) {
+        this.id = id;
         name = s;
         runs = r;
         wickets = 0;
